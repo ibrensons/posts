@@ -24,6 +24,12 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        dd($request); // var_dump() + die() = dd()
+        // dd($request); // var_dump() + die() = dd()
+        Post::create([
+            'title' => $request['title'],
+            'description' => $request['description']
+        ]);
+
+        return redirect('/posts');
     }
 }
